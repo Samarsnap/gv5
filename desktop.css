@@ -1,0 +1,698 @@
+    html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.5;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+      overflow-y: visible;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== Header & Nav ===== */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0;
+      height: 4px;
+      background: #BDFF20;
+      z-index: 2000;
+      transition: width .2s;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background .3s;
+    }
+    header.scrolled {
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #BDFF20;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+    nav a {
+      position: relative;
+      padding: 4px 0;
+      font-weight: 500;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: #BDFF20;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .3s;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    /* ===== Section Base ===== */
+    main {
+      padding-top: 100px;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 60px;
+      scroll-margin-top: 135px;
+      opacity: 1;
+      transform: translateY(0);
+      transition: none;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #BDFF20;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+    }
+
+
+  #home.section {
+    max-width: none;      /* allow it to grow to the viewport */
+    width: 100vw;         /* force full viewport width */
+    margin: 0;            /* cancel the auto-center */
+    padding: 0;           /* remove the side padding */
+  }
+
+  /* 2) Cancel the global push-down so hero can slide up under the nav */
+  main {
+    padding-top: 0;   /* remove the 100px gap */
+  }
+
+    /* ===== Hero ===== */
+    /* Desktop-only: ensure BG covers full viewport */
+    #home {
+      /* Use explicit background properties instead of shorthand */
+      background-image: url('assets/logo.jpg');   /* hero BG image */
+      background-repeat: no-repeat;                /* no tiling */
+      background-position: center;          /* center image */
+      background-size: cover;                      /* cover entire area */
+      background-attachment: fixed;               /* normal scroll behavior */
+
+      min-height: 100vh;                           /* full viewport height */
+      display: flex;
+      align-items: center;                        /* vertically center content */
+      justify-content: center;                    /* horizontally center content */
+      padding: 0;                                 /* remove extra padding */      position: relative;
+    }
+
+
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+    }
+    .hero-content h1 .highlight {
+      color: #BDFF20;
+    }
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 16px 48px;
+      background: #BDFF20;
+      color: #000;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: transform .3s;
+    }
+    .btn:hover {
+      transform: scale(1.1) rotate(-1deg);
+    }
+
+  
+    /* ===== Reduce gap under section-nav ===== */
+    .section-nav + .section {
+      margin-top: 10px; /* reduced from 40px */
+    }
+
+    /* ===== About & Mission ===== */
+    .top-cards {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .top-cards .card {
+      flex: 1;
+      background: #222;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .top-cards .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .top-cards .card p {
+      font-size: 1rem;
+      color: #eee;
+      line-height: 1.5;
+    }
+
+    /* ── 1 & 2) Underlines under “ABOUT US” & “Our Mission” ── */
+.top-cards .card {
+  overflow: hidden;      /* optional: prevent any overflow */
+}
+
+.top-cards .card h2 {
+  position: relative;
+  padding-bottom: 12px;  /* at least your bar’s height */
+}
+
+.top-cards .card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;             /* move up/down */
+  left: -25px;               /* move right/left (or use right:) */
+  width: 540px;          /* bar length */
+  height: 6px;           /* bar thickness */
+  background: #000;      /* bar colour */
+  border-radius: 2px;
+}
+
+
+    /* ===== Section-Nav Heading ===== */
+    .section-nav {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #BDFF20;
+      margin: 1px 0 1px; /* tightened margins */
+      padding: 2px 0;    /* tightened padding */
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* ===== GV Goals ===== */
+    .goals-card {
+      background: #222;
+      border-radius: 12px;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 40px 24px;
+      align-items: start;
+    }
+    .goals-card .title-area {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      position: relative;       /* ← make ::after absolute to this */
+      padding-right: 16px;      /* ← room for the bar */
+    }
+    .goals-card .title-area h2 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      color: #fff;
+      margin: 0;
+    }
+    .goals-card .provide {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .goals-card .promote {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .goals-card .fun {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .goals-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .goals-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 4px;
+    }
+
+    /* ── 3) Vertical bar next to “GV Goals” ── */
+/* make sure the container is positioned */
+.goals-card .title-area {
+  position: relative;   /* ← your anchor for the ::after */
+  padding-right: 12px;  /* ← at least the bar’s width so your text doesn’t bump into it */
+}
+
+/* the vertical bar itself */
+.goals-card .title-area::after {
+  content: "";
+  position: absolute;
+
+  /* vertical position – change this */
+  top: 120px;             /* 50% down from the top of .title-area */
+  transform: translateY(-50%); /* center it vertically */
+
+  /* horizontal position – change this */
+  right: 0;             /* flush to the right edge */
+  /* right: -10px; */    /* ← nudge it 10px outside */
+  /* left: 0; */         /* ← instead, stick it to the left edge */
+
+  /* size & style */
+  width: 6px;           /* thickness */
+  height: 320px;          /* length, relative to .title-area height */
+  background: #000;     /* colour */
+  border-radius: 2px;
+}
+ 
+
+/* ── ABOUT US & Our Mission ── */
+.top-cards .card:nth-child(1) h2,   /* target “ABOUT US” */
+.top-cards .card:nth-child(2) h2 {  /* target “Our Mission” */
+  /* ─ change the text colour ─ */
+  color: #bdff20;            /* ← your new colour here */
+
+  /* ─ change the font size ─ */
+  font-size: 2.1rem;         /* ← adjust up/down */
+
+  /* ─ change the alignment ─ */
+  text-align: left;        /* ← left / center / right */
+
+  /* ─ nudge position ─ */
+  margin-top: -12px;             /* ← moves it down/up */
+  margin-bottom: 16px;       /* ← space below */
+  /* or, for more precise control: */
+  /* transform: translateX(20px) translateY(-10px); */
+}
+
+/* ── GV Goals ── */
+.goals-card .title-area h2 {
+  /* ─ change the text colour ─ */
+  color: #bdff20;            /* ← your new colour here */
+
+  /* ─ change the font size ─ */
+  font-size: 2.1rem;           /* ← adjust up/down */
+
+  /* ─ change the alignment ─ */
+  text-align: center;         /* ← left / center / right */
+
+  /* ─ nudge position ─ */
+  margin: 0;                 /* reset default margins */
+  padding-right: 24px;       /* space before vertical bar */
+ /* ─ nudge position ─ */
+  margin-top: 75px;             /* ← moves it down/up */
+  margin-bottom: 16px;       /* ← space below */
+
+  /* or: */
+  /* transform: translateX(-10px) translateY(5px); */
+}
+
+
+
+    /* ===== Events ===== */
+    #events .subheading {
+      font-size: 1.5rem;
+      margin: 40px 0;
+      color: #BDFF20;
+      text-align: center;
+    }
+    .event-list {
+      display: grid;
+      place-items: center;
+    }
+    .event-card {
+      display: flex;
+      gap: 30px;
+      background: #222;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 1000px;
+      overflow: hidden;
+      padding: 30px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .event-card .event-text {
+      flex: 1;
+    }
+    .event-card .event-text h4 {
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .event-card .event-text p {
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+    .event-card .event-poster {
+      flex: 0 0 40%;
+    }
+    .event-card .event-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .event-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+  .event-subtitle {
+    font-size: 1.2rem;         /* size of the new sub-heading */
+    color: #BDFF20;            /* neon green */
+    margin-bottom: 16px;       /* space below it */
+    text-transform: uppercase; /* optional styling */
+  }
+
+  /* 2) Utility classes for text alignment */
+  .event-text.align-left   { text-align: left; }
+
+ 
+
+    /* ===== Team ===== */
+    #team .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      perspective: 1000px;
+    }
+    .team-members > .section-title {
+      flex: 0 0 100%;
+      margin: 30px 0;
+      text-align: center;
+    }
+    #team .team-card {
+      flex: 1;
+      max-width: 48%;
+      background: #222;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform .3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #team .team-card:hover {
+      transform: translateY(-10px) rotateZ(0deg);
+    }
+    #team .team-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: block;
+    }
+    .team-card.horizontal {
+      flex: 0 0 auto;
+      max-width: none;
+      width: 360px;
+      height: 280px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-card.horizontal .text-container,
+    .team-card.horizontal img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .team-card.horizontal.sam .text-container {
+      left: 120px;
+      text-align: center;
+    }
+    .team-card.horizontal.sam img {
+      right: 24px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .team-card.horizontal.niel img {
+      left: 24px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .team-card.horizontal.niel .text-container {
+      right: 150px;
+      text-align: center;
+    }
+    .team-card.horizontal {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      padding: 24px 32px;
+    }
+    .team-card.horizontal img {
+      margin: 0;
+    }
+    .team-card.horizontal .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+    .team-card.horizontal .text-container h3 {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+    .team-card.horizontal .text-container p {
+      font-size: 1rem;
+    }
+
+    /* ===== Contact ===== */
+    #contact {
+      padding: 80px 0;
+      background: #000;
+    }
+    #contact .contact-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto 24px;
+    }
+    #contact .contact-main-row .contact-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #contact .contact-main-row .contact-item.partnerships {
+      align-items: center;
+      margin-left: 50px;
+    }
+    #contact .contact-main-row .contact-item.support {
+      align-items: center;
+      margin-right: 50px;
+    }
+    #contact .social-panel {
+      background: #222;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #contact .social-panel h4 {
+      color: #fff;
+      font-size: 1.25rem;
+      margin: 0 0 8px;
+    }
+    #contact .social-panel p {
+      color: #ccc;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* hide by default */
+    .close-btn {
+      display: none;
+    }
+
+    /* ===== Mobile Overrides ===== */
+    @media (max-width: 768px) {
+      html, body {
+        overflow-x: hidden;
+      }
+      header {
+        padding: 20px 1rem;
+      }
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+        transform: scale(0.9);
+      }
+      nav.mobile-open .close-btn {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+      }
+      nav.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 4rem 1.5rem;
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+      nav.mobile-open a {
+        padding: 1rem 0;
+        border-bottom: 1px solid #333;
+      }
+      .section {
+        max-width: none;
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+      }
+      .top-cards {
+        flex-direction: column;
+      }
+      .goals-card {
+        display: block;
+        background: #222;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
+      .goals-card .title-area {
+        margin-bottom: 1rem;
+      }
+      .goals-card .title-area h2 {
+        font-size: 1.75rem;
+        color: #BDFF20;
+        margin: 0;
+      }
+      .goals-card .goal {
+        margin-bottom: 1.5rem;
+      }
+      .goals-card .goal h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.25rem;
+      }
+      .goals-card .goal p {
+        font-size: 1rem;
+        color: #eee;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .event-card {
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+      }
+      .event-card .event-poster {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+      #team .team-card,
+      #contact .contact-info {
+        max-width: 100%;
+      }
+      #home {
+        background-attachment: scroll;
+      }
+      .section-nav + .section {
+        margin-top: 10px;
+      }
+    }
+
+hamburger {
+    display: none; 
+    /* ensure it stays hidden once you hit desktop */
+  }
+  .desktop-nav {
+    display: flex;  
+    /* show your full desktop menu */
+  }
