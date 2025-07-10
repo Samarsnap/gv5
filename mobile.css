@@ -44,7 +44,10 @@ html {
       position: fixed;
       inset: 0;
       display: none;
-      align-items: center;
+      align-items: flex-start;    /* snap to top instead of center */
+      padding-top: 80px;           /* push below your fixed header */
+      overflow-y: auto;            /* allow scrolling if it overflows */
+
       justify-content: center;
       background: rgba(0,0,0,0.4);
       z-index: 1000;

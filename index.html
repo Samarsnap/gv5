@@ -15,6 +15,7 @@
   <link
     rel="stylesheet"
     href="mobile.css"
+    :contentReference[oaicite:2]{index=2} 
     media="screen and (max-width: 767px)"
 
   />
@@ -264,16 +265,17 @@
 <div class="mobile-only">
 <!-- Put _all_ your mobile HTML here: header, nav, main content, footer… -->
     <!-- HEADER -->
-  <header>
+ <header>
     <div class="logo">GameVault</div>
-      <!-- Material-3 hamburger toggle -->
+  </header>
+
+  <!-- Material-3 hamburger toggle -->
   <button id="menuToggle" class="m3-hamburger" aria-label="Toggle menu">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
-  <!-- MOBILE NAVIGATION -->
   <!-- DRAWER MENU (outside of <main>) -->
   <nav id="menu" class="m3-drawer" role="dialog" aria-modal="true">
     <ul class="m3-list">
@@ -284,10 +286,10 @@
       <li><a href="#contact-us">Contact Us</a></li>
     </ul>
   </nav>
-</header>
 
-<main>
-      <!-- HERO -->
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO -->
     <section class="hero" id="Home" data-aos="fade-up">
       <h1 data-aos="fade-up" data-aos-delay="200">Want to<br><span class="highlight">Know</span><br>GameVault?</h1>
       <p data-aos="fade-up" data-aos-delay="400">Transforming esports into a healthier,</p>
@@ -407,12 +409,14 @@
         </div>
       </div>
     </section>
-</main>
+  </main>
 
-<!-- AOS JS -->
+  <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();           /* ← Add this */
+
+
     const drawer    = document.getElementById('menu');
     const toggleBtn = document.getElementById('menuToggle');
     const links     = drawer.querySelectorAll('a');
@@ -435,8 +439,5 @@
 </div>
 
 
-
-
- 
 </body>
 </html>
