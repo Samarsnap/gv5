@@ -15,6 +15,8 @@
   <link
     rel="stylesheet"
     href="mobile.css"
+    media="screen and (max-width: 767px)"
+
   />
 
   <!-- 2) desktop.css only when viewport is ≥768px -->
@@ -26,7 +28,21 @@
 </head>
 <body>
 
-
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+ <!-- ─── DESKTOP WRAPPER ─── -->
+<div class="desktop-only">
+  <div id="progress" class="progress-bar"></div>
+    <!-- Put _all_ your desktop HTML here: header, nav, main content, footer… -->
   <header>
   <!-- DESKTOP MENU -->
     <div class="logo">GameVault</div>
@@ -41,29 +57,9 @@
       <a href="#team">Our Team</a>
       <a href="#contact">Get in Touch</a>
     </nav>
-
-  <!-- MOBILE HAMBURGER TOGGLE --> <!-- Material-3 hamburger toggle -->
-  <button id="menuToggle" class="m3-hamburger" aria-label="Toggle menu">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
-
-  <!-- DRAWER MENU (outside of <main>) -->
-  <nav id="menu" class="m3-drawer" role="dialog" aria-modal="true">
-    <ul class="m3-list">
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#know-gv">Know GV</a></li>
-      <li><a href="#events">Our Events</a></li>
-      <li><a href="#teams">GV Team</a></li>
-      <li><a href="#contact-us">Contact Us</a></li>
-    </ul>
-  </nav>
-
   </header>
 
 <main>
-
     <!-- HERO -->
     <section id="home" class="section" data-aos="fade-up">
       <div class="hero-content">
@@ -136,8 +132,7 @@
     </div>
   </div>
 </section>
-
-
+    <!-- TEAM SECTION --> 
     <div class="section-nav"><b>‹ GV Team ›</b></div>
     <section id="team" class="section" data-aos="fade-up">
       <div class="team-members">
@@ -199,10 +194,10 @@
         <p>@instagram @youtube etc</p>
       </div>
     </section>
-
   </main>
 
-  <!-- AOS & Custom Scripts -->
+  
+ <!-- AOS & Custom Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ duration:800, offset:100, once:false, mirror:true });
@@ -254,5 +249,194 @@
       });
     });
   </script>
+
+
+  </div>
+  <!-- ─── DESKTOP WRAPPER END ─── -->
+  <!-- ─── DESKTOP WRAPPER END ─── -->
+
+
+
+
+
+
+   <!-- ─── MOBILE WRAPPER ─── -->
+<div class="mobile-only">
+<!-- Put _all_ your mobile HTML here: header, nav, main content, footer… -->
+    <!-- HEADER -->
+  <header>
+    <div class="logo">GameVault</div>
+      <!-- Material-3 hamburger toggle -->
+  <button id="menuToggle" class="m3-hamburger" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- MOBILE NAVIGATION -->
+  <!-- DRAWER MENU (outside of <main>) -->
+  <nav id="menu" class="m3-drawer" role="dialog" aria-modal="true">
+    <ul class="m3-list">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#know-gv">Know GV</a></li>
+      <li><a href="#events">Our Events</a></li>
+      <li><a href="#teams">GV Team</a></li>
+      <li><a href="#contact-us">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+      <!-- HERO -->
+    <section class="hero" id="Home" data-aos="fade-up">
+      <h1 data-aos="fade-up" data-aos-delay="200">Want to<br><span class="highlight">Know</span><br>GameVault?</h1>
+      <p data-aos="fade-up" data-aos-delay="400">Transforming esports into a healthier,</p>
+      <p data-aos="fade-up" data-aos-delay="500">more inclusive, and truly</p>
+      <p data-aos="fade-up" data-aos-delay="600">engaging experience.</p>
+      <a href="#know-gv" class="btn" data-aos="zoom-in" data-aos-delay="800">Dive In!!</a>
+    </section>
+
+    <!-- KNOW GAMEVAULT -->
+
+    <div class="section-nav">△ <b>Know GameVault</b> △</div>
+    <section id="know-gv" class="mobile-card" data-aos="fade-up">
+      <h2>ABOUT US</h2>
+      <p>At GameVault, we believe competitive gaming should elevate – not overwhelm – its community. We are on a mission to foster a transparent, informative, and non-addictive E-Sports ecosystem, where thrill and skill go hand in hand with mental well-being.</p>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mobile-card" id="mission" data-aos="fade-up" data-aos-delay="200">
+      <h2>Our Mission</h2>
+      <p>To create a safe, inclusive, and supportive space where gamers can compete, learn, and grow without the stress and pressure of traditional gaming environments. We strive to build a community that values respect, balance, and healthy gaming habits.</p>
+    </section>
+
+    <!-- GOALS -->
+    <section class="goals-card" id="goals" data-aos="fade-up" data-aos-delay="400">
+      <h2>GV Goals</h2>
+      <div>
+        <h3>Provide Open Information</h3>
+        <p>Deliver transparent resources that empower players to make informed gaming decisions.</p>
+      </div>
+      <div>
+        <h3>Promote Healthy Gameplay</h3>
+        <p>Encourage regular breaks, mental health awareness, and a culture of respect and inclusivity.</p>
+      </div>
+      <div>
+        <h3>Addiction-Free Fun</h3>
+        <p>Thoughtful scheduling, reasonable match lengths, and wellness tips ensure gaming stays a passion, not a pitfall.</p>
+      </div>
+    </section>
+
+    <!-- OUR EVENTS -->
+    <div class="section-nav">◀ Our Events ▶</div>
+    <section id="events" data-aos="fade-up" data-aos-delay="600">
+      <div class="event-card" data-aos="fade-up" data-aos-delay="700">
+        <div class="details">
+          <h3>Upcoming Events</h3>
+          <p><strong>Event Details :</strong> Barh Summer Royale BGMI Tournament</p>
+          <p><strong>Duration:</strong> 1 Day</p>
+          <p><strong>Date:</strong> to be decided</p>
+          <p><strong>Prize:</strong> 4000 Day</p>
+          <p><strong>Location:</strong> Barh, Bihar</p>
+          <p><strong>Venue:</strong> To be decided</p>
+          <p>Click for registration</p>
+          <p><strong>Rules:</strong></p>
+          <p>1. Only Squad entry</p>
+          <p>2. Barh Subdivision Gamers</p>
+        </div>
+        <div class="poster">
+          <img src="assets/p.png" alt="Event Poster">
+        </div>
+      </div>
+    </section>
+
+    <!-- GV TEAM -->
+    <div class="section-nav">◀ GV Team ▶</div>
+    <section class="team-grid" id="teams">
+      <div class="team-card samar" data-aos="zoom-in">
+        <div class="avatar"></div>
+        <p>Samar<br>CEO</p>
+      </div>
+      <div class="team-card niel" data-aos="zoom-in" data-aos-delay="200">
+        <div class="avatar"></div>
+        <p>Niel<br>CEO</p>
+      </div>
+    </section>
+
+    <!-- GAMERS TEAM -->
+    <div class="section-nav">◀ Gamers Team ▶</div>
+    <section class="gamers-grid">
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="avatar"></div>
+        <p>Kajal (BGMI)<br>The Spotter</p>
+      </div>
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="avatar"></div>
+        <p>Deep (BGMI)<br>The 1 vs 4</p>
+      </div>
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="avatar"></div>
+        <p>Gamer 3 caption</p>
+      </div>
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="avatar"></div>
+        <p>Gamer 4 (BGMI)<br>caption</p>
+      </div>
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="avatar"></div>
+        <p>Gamer 5 (BGMI)<br>caption</p>
+      </div>
+      <div class="gamers-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="avatar"></div>
+        <p>Gamer 6 caption</p>
+      </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contact-us">
+      <h1 style="color: var(--green); text-align: center; margin: 20px 0;">△ Contact Us △</h1>
+      <div class="card">
+        <a href="#" class="form-button">Tap here google form link</a>
+        <div class="socials">
+          <h2>GV Socials</h2>
+          <ul>
+            <li>@instagram</li>
+            <li>@youtube etc</li>
+            <li>linkedin</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();           /* ← Add this */
+    const drawer    = document.getElementById('menu');
+    const toggleBtn = document.getElementById('menuToggle');
+    const links     = drawer.querySelectorAll('a');
+
+    // open/close drawer
+    toggleBtn.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+    });
+
+    // close when a link is clicked
+    links.forEach(a =>
+      a.addEventListener('click', () => drawer.classList.remove('open'))
+    );
+
+    // close on ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') drawer.classList.remove('open');
+    });
+  </script>
+</div>
+
+
+
+
+ 
 </body>
 </html>

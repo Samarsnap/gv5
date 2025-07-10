@@ -3,6 +3,14 @@ html {
       scroll-padding-top: 160px; /* match your fixed header height */
     }
 
+    /* Hide desktop on mobile */
+.desktop-only { display: none !important; }
+/* Make sure mobile wrapper is visible */
+.mobile-only { display: block; }
+
+/* …all of your existing mobile styles… */
+
+
     /* GLOBAL RESET & BASE */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Poppins', sans-serif; background: #000; color: #fff; }

@@ -1,4 +1,6 @@
-    html {
+    html 
+    
+    {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -11,6 +13,14 @@
       color: #fff;
       line-height: 1.5;
     }
+
+    /* Hide mobile on desktop */
+.mobile-only { display: none !important; }
+/* Make sure desktop wrapper is visible */
+.desktop-only { display: block; }
+
+/* …all of your existing desktop styles… */
+
     body {
       margin: 0;
       padding: 0;
@@ -688,11 +698,16 @@
       }
     }
 
-hamburger {
-    display: none; 
-    /* ensure it stays hidden once you hit desktop */
+/* desktop.css */
+@media screen and (min-width: 768px) {
+  /* hide the Material-3 hamburger toggle and drawer on desktop */
+  .m3-hamburger,
+  .m3-drawer {
+    display: none !important;
   }
+
+  /* show your desktop nav if you’d hidden it before */
   .desktop-nav {
-    display: flex;  
-    /* show your full desktop menu */
+    display: flex;
   }
+}
