@@ -157,8 +157,8 @@ html {
     }
 
     #know-gv { scroll-margin-top: 80px; }
-    #events   { scroll-margin-top: 80px; }
-    #teams    { scroll-margin-top: 80px; }
+    #events { scroll-margin-top: 80px; }
+    #teams { scroll-margin-top: 80px; }
 
     /* ABOUT & MISSION CARDS */
     .mobile-card {
