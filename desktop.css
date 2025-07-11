@@ -132,6 +132,7 @@
       position: relative;
     }
     .section-title::after {
+      display: none;
       content: '';
       width: 60px;
       height: 4px;
@@ -148,9 +149,9 @@
     width: 100vw;         /* force full viewport width */
     margin: 0;            /* cancel the auto-center */
     padding: 0;           /* remove the side padding */
-    /* undo the translateY you applied in .section */
-    transform: none !important;
-    /* if you’re animating other sections, still let them keep their transform */  
+   /* undo the translateY you applied in .section */
+  transform: none !important;
+  /* if you’re animating other sections, still let them keep their transform */
   }
 
     /* ===== Hero ===== */
@@ -445,12 +446,10 @@
     text-transform: uppercase; /* optional styling */
   }
 
-  /* 2) Utility classes for text alignment */
+/* 2) Utility classes for text alignment */
   .event-text.align-left   { text-align: left; }
 
- 
-
-    /* ===== Team ===== */
+/* ===== Team ===== */
     #team .team-members {
       display: flex;
       flex-wrap: wrap;
@@ -546,6 +545,43 @@
     .team-card.horizontal .text-container p {
       font-size: 1rem;
     }
+
+
+/* 2) Scope a new style just to the Team section’s title */
+#team .section-title {
+  display: flex;       /* shrink-to-fit its width */
+  margin: 20px 0;      /* ↑↑ ↑↑ ↑↑ more gap above & below */
+  color: #BDFF20;                 /* or whatever text color you prefer */
+  text-align: center;
+  font-size: 2rem;
+  align-items: center;     /* vertical centering */
+  justify-content: center; /* horizontal centering */
+
+
+}
+
+/* 3) Draw left & right bars via ::before and ::after */
+#team .section-title::before,
+#team .section-title::after {
+  content: '';
+  display: flex;       /* shrink-to-fit its width */
+  border-radius: 2px;            /* smooth, rounded ends */
+  margin: 0 20px;                /* space between text and bars */
+  top: 50%;                    /* vertically center the lines */
+  width: 100px;                /* length of each line—tweak to taste */
+  height: 4px;                 /* thickness of the bar */
+  background: #BDFF20;         /* neon green */
+  transform: translateY(-50%);
+}
+
+#team .section-title::before,
+#team .section-title::after {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
 
     /* ===== Contact ===== */
     #contact {
