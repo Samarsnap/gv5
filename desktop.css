@@ -148,6 +148,9 @@
     width: 100vw;         /* force full viewport width */
     margin: 0;            /* cancel the auto-center */
     padding: 0;           /* remove the side padding */
+    /* undo the translateY you applied in .section */
+    transform: none !important;
+    /* if you’re animating other sections, still let them keep their transform */  
   }
 
     /* ===== Hero ===== */
