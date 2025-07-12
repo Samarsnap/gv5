@@ -15,7 +15,7 @@ html {
 #progress-bar-tube {
   position: fixed;
   top: 28px; /* adjust to your header height */
-  left: 55%; /* ← new: anchor us at 50% across the viewport */
+  left: 60%; /* ← new: anchor us at 50% across the viewport */
   transform: translateX(-50%);
   height: 8px;
   width: 50%;
