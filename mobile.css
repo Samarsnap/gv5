@@ -15,7 +15,7 @@ html {
 #progress-bar-tube {
   position: fixed;
   top: 28px; /* adjust to your header height */
-  left: 57.5%; /* ← new: anchor us at 50% across the viewport */
+  left: 60%; /* ← new: anchor us at 50% across the viewport */
   transform: translateX(-50%);
   height: 8px;
   width: 50%;
@@ -103,7 +103,7 @@ html {
       color: var(--m3-on-surface);
       font-weight: 500;
       font-size: 1rem;
-      padding: 12.5px;
+      padding: 12px;
       border-radius: 8px;
       transition: background .2s;
     }
@@ -112,7 +112,7 @@ html {
     }
     .m3-hamburger {
       position: fixed;
-      top: 15px;
+      top: 13px;
       right: 20px;
       width: 30px; 
       height: 30px;
@@ -367,18 +367,19 @@ html {
       margin: 0 auto 8px;
       }  
 
-    /* CONTACT US CARD */
+/* CONTACT US CARD */
     :root {
       --green: #BDFF20;
       --card-bg: #1a1a1a;
     }
     #contact-us > h1 {
       font-size: 1.7rem;
+
     }
     .card {
       background: var(--card-bg);
       border-radius: 20px;
-      padding: 24px 16px;
+      padding: 34px 16px;
       margin: 20px;
     }
     .form-button {
@@ -402,6 +403,30 @@ html {
     .socials ul {
       list-style: none;
     }
-    .socials li {
-      margin: 8px 0;
+
+    .socials li a {
+      display: inline-flex; /* enables flex on the link */
+      align-items: center; /* vertically center icon + text */
+    }
+
+    .socials li a img {
+      order: 0;                  /* icon comes first */
+      margin-right: 1px;         /* extra breathing room */
+    }
+
+/* wrap icon + text in a “pill” with border & padding */
+    .socials li a.social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;                     /* space between icon & text */
+      padding: 8px 16px;            /* pill padding */
+      border: 0px solid var(--green);
+      border-radius: 40px;
+      transition: background .3s, transform .2s;
+    }
+
+/* hover state: glow & slight lift */
+    .socials li a.social-pill:hover {
+      background: rgba(189,255,32,0.2);  /* semi-transparent neon */
+      transform: translateY(-2px);
     }
