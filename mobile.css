@@ -77,7 +77,6 @@ html {
       align-items: flex-start;    /* snap to top instead of center */
       padding-top: 200px;           /* push below your fixed header */
       overflow-y: auto;            /* allow scrolling if it overflows */
-      align-items: center;         /* vertical‐center both children */
 
       justify-content: center;
       background: rgba(0,0,0,0.4);
