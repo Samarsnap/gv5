@@ -112,15 +112,38 @@ html {
     @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
     /* HERO */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url('assets/sky.jpg') center/cover no-repeat;
-      animation: slideInUp .8s ease-out both;
-      text-align: center;
-      padding: 260px 20px;
-    }
+.hero {
+  position: relative;        /* establish stacking context */
+  overflow: hidden;
+  padding: 260px 20px;       /* your existing top/bottom padding */
+  text-align: center;
+  /* remove the gradient+image here */
+  background: none;          /* ← removed */
+   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;  /* 🔑 pin it to the viewport */
+}
+
+/* 1) fixed-position background layer */
+.hero::before {
+  content: '';
+  position: fixed;           /* pins to viewport */
+  top: 0; left: 0;
+  width: 100%; height: 100vh;/* full-screen coverage */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('assets/sky.jpg') center/cover no-repeat; /* your BG + overlay */
+  z-index: -1;               /* behind all content */
+}
+
+/* 3) scope your AOS/animation to the inner box, not the hero itself */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  /* your slideInUp / fade-up animation */
+}
+
     .hero h1 {
       font-size: 2rem;
       line-height: 1.2;
