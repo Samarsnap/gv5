@@ -271,8 +271,12 @@
 <!-- ─── MOBILE WRAPPER ─── -->
 <!-- ─── MOBILE WRAPPER ─── -->
 <div class="mobile-only">
+
+<!-- HTML: put this just inside <body> -->
+<div id="progress-bar-tube"></div>
+
 <!-- Put _all_ your mobile HTML here: header, nav, main content, footer… -->
-    <!-- HEADER -->
+<!-- HEADER -->
  <header>
     <div class="logo">GameVault</div>
   </header>
@@ -301,9 +305,9 @@
     <section class="hero" id="Home" >
       <div class="hero-inner" data-aos="fade-up" data-aos-delay="100">
       <h1 data-aos="fade-up" data-aos-delay="200">Want To Know<br><span class="highlight">GameVault?</span><br></h1>
-      <p data-aos="fade-up" data-aos-delay="400">Transforming esports into a healthier,</p>
-      <p data-aos="fade-up" data-aos-delay="500">more inclusive, and truly</p>
-      <p data-aos="fade-up" data-aos-delay="600">engaging experience.</p>
+      <p data-aos="fade-up" data-aos-delay="400">Transforming E-Sports Into a Healthier,</p>
+      <p data-aos="fade-up" data-aos-delay="500">More Inclusive, and Truly </p>
+      <p data-aos="fade-up" data-aos-delay="600">Engaging Experience.</p>
       <a href="#know-gv" class="btn" data-aos="zoom-in" data-aos-delay="800">Dive In!!</a>
     </div>
     </section>
@@ -367,11 +371,14 @@
     <section class="team-grid" id="teams">
       <div class="team-card samar" data-aos="zoom-in">
         <div class="avatar"></div>
-        <p>Samar<br>CEO</p>
+        <img src="assets/samar.jpg" alt="Samar" class="avatar">
+        <p>Samar<br>-Gaming Head-</p>
+
       </div>
       <div class="team-card niel" data-aos="zoom-in" data-aos-delay="200">
         <div class="avatar"></div>
-        <p>Niel<br>CEO</p>
+        <img src="assets/niel.jpg" alt="Niel" class="avatar">
+        <p>Niel<br>-Business Head-</p>
       </div>
     </section>
 
@@ -379,28 +386,34 @@
     <div class="section-nav">◀ Gamers Team ▶</div>
     <section class="gamers-grid">
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="avatar"></div>
-        <p>Kajal (BGMI)<br>The Spotter</p>
+        <div class="gamers-card"></div>
+        <img src="assets/Kajal.jpg" alt="Kajal" class="avatar">
+        <p>Kajal (BGMI)<br>Hacker haee</p>
       </div>
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="avatar"></div>
+        <div class="gamers-card"></div>
+        <img src="assets/deep.jpg" alt="Deep" class="avatar">
         <p>Deep (BGMI)<br>The 1 vs 4</p>
       </div>
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="avatar"></div>
-        <p>Gamer 3 caption</p>
+        <div class="gamers-card"></div>
+        <img src="assets/karan.jpg" alt="Karan" class="avatar">
+        <p>Karan (CODM)<br>Network issue hai</p>
       </div>
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="avatar"></div>
-        <p>Gamer 4 (BGMI)<br>caption</p>
+        <div class="gamers-card"></div>
+        <img src="assets/angel.jpg" alt="Angel" class="avatar">
+        <p>Angel(BGMI)<br>Khelne atta hai?</p>
       </div>
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="500">
-        <div class="avatar"></div>
-        <p>Gamer 5 (BGMI)<br>caption</p>
+        <div class="gamers-card"></div>
+        <img src="assets/sanskar.jpg" alt="Sanskar" class="avatar">
+        <p>Sanskar (BGMI)<br>ajjj ja bhai</p>
       </div>
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="600">
-        <div class="avatar"></div>
-        <p>Gamer 6 caption</p>
+        <div class="gamers-card"></div>
+        <img src="assets/valorant.jpg" alt="Valorant" class="avatar">
+        <p>Valorant<br>caption</p>
       </div>
     </section>
 
@@ -445,13 +458,34 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') drawer.classList.remove('open');
     });
+
+    // ← NEW: close when clicking outside the menu (on the overlay)
+      drawer.addEventListener('click', e => {
+          if (e.target === drawer) {
+          drawer.classList.remove('open');
+      }
+    });
   // on mobile widths, remove the desktop id so the mobile one is the first match
   if (window.innerWidth < 768) {
     document
       .querySelector('.desktop-only #events')
       ?.removeAttribute('id');
   }
-    
+ const tube = document.getElementById('progress-bar-tube');
+  const fill = tube.querySelector('::after'); // note: you can't query pseudo; let's instead:
+  // better:
+  tube.insertAdjacentHTML('beforeend','<div class="fill"></div>');
+  const inner = tube.querySelector('.fill');
+  inner.style.height = '100%';
+  inner.style.width = '0';
+  inner.style.background = '#BDFF20';
+  inner.style.borderRadius = '4px';
+  inner.style.transition = 'width .1s linear';
+
+  window.addEventListener('scroll', () => {
+    const pct = (scrollY / (document.body.scrollHeight - innerHeight)) * 100;
+    inner.style.width = pct + '%';
+  });  
   </script>
 </div>
 

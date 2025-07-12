@@ -11,6 +11,32 @@ html {
 /* …all of your existing mobile styles… */
 
 
+/* Progress bar */
+#progress-bar-tube {
+  position: fixed;
+  top: 28px; /* adjust to your header height */
+  left: 55%; /* ← new: anchor us at 50% across the viewport */
+  transform: translateX(-50%);
+  height: 8px;
+  width: 50%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 9999;
+
+}
+#progress-bar-tube::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #BDFF20;
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+
+
     /* GLOBAL RESET & BASE */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Poppins', sans-serif; background: #000; color: #fff; }
@@ -19,12 +45,16 @@ html {
     /* HEADER BAR */
     header {
       background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 20px 20px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      padding: 20px;
       position: fixed;
       top: 0; left: 0; width: 100%;
       z-index: 100;
+      /* logo on left, hamburger on right */
+      justify-content: space-between; 
+      align-items: center;         /* vertical‐center both children */
+      display: flex;               /* enable flex layout */
     }
     .logo {
       color: #BDFF20;
@@ -37,7 +67,7 @@ html {
       --m3-surface: #ffffff;
       --m3-on-surface: #1f1f1f;
       --m3-elevation: 0px 4px 16px rgba(0,0,0,0.2);
-      --m3-radius: 16px;
+      --m3-radius: 10px;
       --m3-padding: 24px;
     }
     .m3-drawer {
@@ -45,8 +75,9 @@ html {
       inset: 0;
       display: none;
       align-items: flex-start;    /* snap to top instead of center */
-      padding-top: 80px;           /* push below your fixed header */
+      padding-top: 200px;           /* push below your fixed header */
       overflow-y: auto;            /* allow scrolling if it overflows */
+      align-items: center;         /* vertical‐center both children */
 
       justify-content: center;
       background: rgba(0,0,0,0.4);
@@ -82,9 +113,10 @@ html {
     }
     .m3-hamburger {
       position: fixed;
-      top: 12px;
+      top: 13px;
       right: 20px;
-      width: 30px; height: 30px;
+      width: 30px; 
+      height: 30px;
       border: none;
       border-radius: var(--m3-radius);
       background: var(--m3-surface);
@@ -119,10 +151,7 @@ html {
   text-align: center;
   /* remove the gradient+image here */
   background: none;          /* ← removed */
-   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;  /* 🔑 pin it to the viewport */
+  
 }
 
 /* 1) fixed-position background layer */
@@ -156,7 +185,7 @@ html {
     .hero p {
       font-size: 1rem;
       color: #eee;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
     .hero .btn {
       display: inline-block;
@@ -166,6 +195,7 @@ html {
       border-radius: 30px;
       font-weight: 600;
       animation: pulse 2s ease-in-out 1s infinite;
+      margin-top: 8px; /* add some space above */
     }
 
     /* SECTION NAV LABEL */
@@ -259,7 +289,7 @@ html {
       margin: 0 auto;
     }
 
-    /* GV TEAM */
+/* GV TEAM */
     .team-grid {
       display: flex;
       gap: 12px;
@@ -301,9 +331,12 @@ html {
       border-radius: 50%;
       margin: 0 auto 12px;
       box-sizing: border-box;
+      object-fit: cover;       /* crop/scale your photo nicely */
+
     }
     .team-card.niel { margin-right: -40px; }
     .team-card.samar { margin-left: 40px; }
+
 
     /* GAMERS TEAM */
     .gamers-grid {
@@ -318,18 +351,22 @@ html {
       padding: 12px;
       text-align: center;
     }
-    .gamers-card .avatar {
-      width: 80px;
-      height: 80px;
-      background: #555;
-      border-radius: 50%;
-      margin: 0 auto 8px;
-    }
+
     .gamers-card p {
       font-size: 0.75rem;
       color: #fff;
       line-height: 1.2;
     }
+    img.avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;    /* crop & fill */
+      background-size: cover;      /* fill the circle */
+      background-position: center; /* center the photo */
+      display: block;
+      margin: 0 auto 8px;
+      }  
 
     /* CONTACT US CARD */
     :root {
