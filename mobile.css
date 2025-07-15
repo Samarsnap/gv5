@@ -15,7 +15,7 @@ html {
 #progress-bar-tube {
   position: fixed;
   top: 28px; /* adjust to your header height */
-  left: 60%; /* ← new: anchor us at 50% across the viewport */
+  left: 57.5%; /* ← new: anchor us at 57.5% across the viewport */
   transform: translateX(-50%);
   height: 8px;
   width: 50%;
@@ -62,7 +62,7 @@ html {
       font-weight: 600;
     }
 
-    /* HAMBURGER & NAV MENU */
+/* HAMBURGER & NAV MENU */
     :root {
       --m3-surface: #ffffff;
       --m3-on-surface: #1f1f1f;
@@ -112,9 +112,9 @@ html {
     }
     .m3-hamburger {
       position: fixed;
-      top: 13px;
-      right: 20px;
-      width: 30px; 
+      top: 15px; /* ↓ push it further down from the top */
+      right: 20px; /* → keep it aligned with the content */
+      width: 30px;
       height: 30px;
       border: none;
       border-radius: var(--m3-radius);
@@ -197,7 +197,7 @@ html {
       margin-top: 8px; /* add some space above */
     }
 
-    /* SECTION NAV LABEL */
+/* SECTION NAV LABEL */
     .section-nav {
       text-align: center;
       font-size: 1.7rem;

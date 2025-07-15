@@ -189,13 +189,13 @@
     }
     .hero-content h1 {
       font-size: 4rem;
-      margin-bottom: 20px;
+      margin-top: 100px;
       color: #fff;
     }
     .hero-content p {
       font-size: 1.25rem;
-      color: #ccc;
-      margin-bottom: 30px;
+      color: #ffffff;
+      margin-bottom: 5px;
     }
     .btn {
       padding: 16px 48px;
@@ -204,10 +204,29 @@
       font-weight: 600;
       border-radius: 30px;
       transition: transform .3s;
+      font-size: 1.5rem;
     }
+   
+    #home .btn {
+      position: absolute;
+      bottom: -70px;            /* how far from the bottom of the hero */
+      left: 50%;               /* center horizontally */
+      transform: translateX(-50%);
+      margin: 0;               /* reset any previous margins */
+    }
+  
     .btn:hover {
       transform: scale(1.1) rotate(-1deg);
     }
+
+    h1 .subtitle {
+      display: block;     /* pushes “Squad” to its own line */
+      font-size: 0.8em;   /* optional tweak to differentiate it */
+      margin-top: -20px;  /* optional breathing room */
+      color: #ffffff;        /* optional color */
+    }
+
+
 
   
     /* ===== Reduce gap under section-nav ===== */
