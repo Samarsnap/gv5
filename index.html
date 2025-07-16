@@ -74,7 +74,12 @@
     </section>
 
     <!-- ABOUT & GOALS -->
-    <div class="section-nav"><b>‹ Know GameVault ›</b></div>
+    <div class="section-nav">
+        <span class="rotate-symbol">⚙</span>
+        <b>Know GameVault</b>
+        <span class="rotate-symbol">⚙</span>
+    </div>
+
     <section id="about" class="section" data-aos="fade-up">
       <div class="top-cards">
         <div class="card" data-aos="fade-right">
@@ -107,7 +112,11 @@
       </div>
     </section>
 
-    <div class="section-nav"><b>‹ Our Events ›</b></div>
+    <div class="section-nav">
+  <span class="rotate-symbol">⚙</span>
+  <b>Our Events</b>
+  <span class="rotate-symbol">⚙</span>
+</div>
 <!-- ── OUR EVENTS SECTION (replace your current one) ── -->
 <section id="events" class="section" data-aos="fade-up">
   <div class="event-list">
@@ -136,8 +145,13 @@
     </div>
   </div>
 </section>
-    <!-- TEAM SECTION --> 
-    <div class="section-nav"><b>‹ GV Team ›</b></div>
+
+<!-- TEAM SECTION --> 
+    <div class="section-nav">
+  <span class="rotate-symbol">⚙</span>
+  <b>CLAN LEADERS</b>
+  <span class="rotate-symbol">⚙</span>
+</div>
     <section id="team" class="section" data-aos="fade-up">
       <div class="team-members">
         <div class="team-card horizontal sam" data-aos="flip-left">
@@ -156,7 +170,7 @@
         </div>
       </div>
 
-      <div class="section-title">GV Gamers Team</div>
+      <div class="section-title">CLAN MEMEBERS</div>
       <div class="team-members">
         <div class="team-card" data-aos="flip-left">
           <img src="assets/Kajal.jpg" alt="The Spooter"/>
@@ -181,7 +195,11 @@
       </div>
     </section>
 
-    <div class="section-nav"><b>‹ Want to Talk to Us ›</b></div>
+    <div class="section-nav"><b>
+      <span class="rotate-symbol">⚙</span>
+      CONTACT US
+      <span class="rotate-symbol">⚙</span>
+    </b></div>
     <section id="contact" class="section">
       <div class="contact-main-row">
         <div class="contact-item partnerships">
@@ -260,11 +278,23 @@
       ?.removeAttribute('id');
   }
 
-  </script>
+  window.addEventListener('scroll', () => {
+  // … your existing progress‐bar + header code …
+
+  // rotate our symbols
+  const deg = window.scrollY;                
+  document.querySelectorAll('.rotate-symbol').forEach(sym => {
+    sym.style.transform = `rotate(${deg}deg)`;
+  });
+});
 
 
-  </div> <!-- ─── DESKTOP WRAPPER END ─── -->
+</script>
+</div> 
 <!-- ─── DESKTOP WRAPPER END ─── -->
+<!-- ─── DESKTOP WRAPPER END ─── -->
+
+
 
 <!-- ─── MOBILE WRAPPER ─── -->
 <!-- ─── MOBILE WRAPPER ─── -->
@@ -318,9 +348,12 @@
     </div>
     </section>
 
-    <!-- KNOW GAMEVAULT -->
+<!-- KNOW GAMEVAULT -->
 
-    <div class="section-nav">△ <b>KNOW GAMEVAULT</b> △</div>
+    <div class="section-nav"><span class="rotate-symbol">⚙</span> 
+      <b>KNOW GAMEVAULT</b> 
+      <span class="rotate-symbol">⚙</span>
+    </div>
     <section id="know-gv" class="mobile-card" data-aos="fade-up">
       <h2>About Us</h2>
       <p>At GameVault, we believe competitive gaming should elevate – not overwhelm – its community. We are on a mission to foster a transparent, informative, and non-addictive E-Sports ecosystem, where thrill and skill go hand in hand with mental well-being.</p>
@@ -350,7 +383,12 @@
     </section>
 
     <!-- OUR EVENTS -->
-    <div class="section-nav">◀ OUR EVENTS ▶</div>
+    <div class="section-nav">
+      <span class="rotate-symbol">⚙</span>
+      OUR EVENTS
+      <span class="rotate-symbol">⚙</span>
+    </div>
+
     <section id="events" data-aos="fade-up" data-aos-delay="600">
       <div class="event-card" data-aos="fade-up" data-aos-delay="700">
         <div class="details">
@@ -373,7 +411,12 @@
     </section>
 
     <!-- GV TEAM -->
-    <div class="section-nav">◀ CLAN LEADERS ▶</div>
+    <div class="section-nav">
+      <span class="rotate-symbol">⚙</span>
+      CLAN LEADERS
+      <span class="rotate-symbol">⚙</span>
+    </div>
+
     <section class="team-grid" id="teams">
       <div class="team-card samar" data-aos="zoom-in">
         <div class="avatar"></div>
@@ -389,7 +432,12 @@
     </section>
 
     <!-- GAMERS TEAM -->
-    <div class="section-nav">◀ CLAN MEMEBERS ▶</div>
+    <div class="section-nav">
+      <span class="rotate-symbol">⚙</span>
+      CLAN MEMBERS
+      <span class="rotate-symbol">⚙</span>
+    </div>
+
     <section class="gamers-grid">
       <div class="gamers-card" data-aos="fade-up" data-aos-delay="100">
         <div class="gamers-card"></div>
@@ -427,7 +475,11 @@
     <section id="contact-us">
       <h1 style="color: var(--green); 
       text-align: center; margin: 20px 0;">
-      △ CONTACT US △</h1>
+      <span class="rotate-symbol">⚙</span> 
+      CONTACT US 
+      <span class="rotate-symbol">⚙</span>
+      </h1>
+      
       <div class="card">
         <a href="#" class="form-button">Tap here google form link</a>
         <div class="socials">
@@ -517,6 +569,18 @@
     const pct = (scrollY / (document.body.scrollHeight - innerHeight)) * 100;
     inner.style.width = pct + '%';
   });  
+
+  window.addEventListener('scroll', () => {
+  // … your existing progress‐tube code …
+
+  // rotate mobile symbols too
+  const deg = window.scrollY / 5;
+  document.querySelectorAll('.rotate-symbol').forEach(sym => {
+    sym.style.transform = `rotate(${deg}deg)`;
+  });
+});
+
+
   </script>
 </div>
 

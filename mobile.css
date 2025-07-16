@@ -35,6 +35,16 @@ html {
   transition: width 0.1s linear;
 }
 
+.rotate-symbol {
+  display: inline-block;       /* allow transforms */
+  transition: transform .2s ease-out;
+  /* optional: set your pivot point */
+  transform-origin: center center;
+  font-size: 1.2rem;            /* try 1rem, 1.5rem, 2rem, etc. */
+  position: relative;
+  top: -1.6px;  /* moves the symbol down 1.6px */
+}
+
 
 
     /* GLOBAL RESET & BASE */
@@ -378,6 +388,7 @@ html {
       font-size: 1.7rem;
 
     }
+    
     .card {
       background: var(--card-bg);
       border-radius: 20px;
@@ -385,9 +396,10 @@ html {
       margin: 20px;
     }
     .form-button {
-      display: block;
+      display: block;      /* so width is honored */
+      width: 300px;               /* set your desired width */
       border: 1px solid var(--green);
-      border-radius: 20px;
+      border-radius: 40px;
       color: #fff;
       font-weight: 600;
       text-align: center;
@@ -395,6 +407,7 @@ html {
       padding: 14px;
       margin: 0 auto 32px;
     }
+
     .socials {
       text-align: center;
     }

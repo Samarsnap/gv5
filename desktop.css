@@ -227,8 +227,17 @@
     }
 
 
-
+.rotate-symbol {
+  display: inline-block;       /* allow transforms */
+  transition: transform .2s ease-out;
+  /* optional: set your pivot point */
+  transform-origin: center center;
+  font-size: 1.5rem; /* try 1rem, 1.5rem, 2rem, etc. */
+  position: relative;
+  top: -3px;  /* moves the symbol down 3px */
+}
   
+
     /* ===== Reduce gap under section-nav ===== */
     .section-nav + .section {
       margin-top: 10px; /* reduced from 40px */
