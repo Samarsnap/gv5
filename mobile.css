@@ -37,6 +37,7 @@ html {
 }
 
 .rotate-symbol {
+  
   display: inline-block;       /* allow transforms */
   transition: transform .2s ease-out;
   /* optional: set your pivot point */
@@ -85,13 +86,16 @@ html {
       position: fixed;
       inset: 0;
       display: none;
-      align-items: flex-start;    /* snap to top instead of center */
-      padding-top: 200px;           /* push below your fixed header */
-      overflow-y: auto;            /* allow scrolling if it overflows */
-
+      align-items: flex-start; /* snap to top instead of center */
+      padding-top: 150px;    /* push below your fixed header */
+      overflow-y: auto;      /* allow scrolling if it overflows */
       justify-content: center;
       background: rgba(0,0,0,0.4);
       z-index: 1000;
+     /* add these two: */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
     }
     .m3-drawer.open {
       display: flex;

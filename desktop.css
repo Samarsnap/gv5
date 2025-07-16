@@ -612,31 +612,12 @@
 }
 
 
-    /* ===== Contact ===== */
+/* ===== Contact ===== */
     #contact {
       padding: 80px 0;
       background: #000;
     }
-    #contact .contact-main-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 800px;
-      margin: 0 auto 24px;
-    }
-    #contact .contact-main-row .contact-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    #contact .contact-main-row .contact-item.partnerships {
-      align-items: center;
-      margin-left: 50px;
-    }
-    #contact .contact-main-row .contact-item.support {
-      align-items: center;
-      margin-right: 50px;
-    }
+
     #contact .social-panel {
       background: #222;
       border-radius: 12px;
@@ -656,111 +637,85 @@
       margin: 0;
     }
 
+
     /* hide by default */
     .close-btn {
       display: none;
     }
+.socials {
+  list-style: none;    /* turn off bullets */
+  margin: 0;           /* reset any default top/bottom spacing */
+  padding: 0;          /* reset the default left indent */
+}
 
-    /* ===== Mobile Overrides ===== */
-    @media (max-width: 768px) {
-      html, body {
-        overflow-x: hidden;
-      }
-      header {
-        padding: 20px 1rem;
-      }
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-        transform: scale(0.9);
-      }
-      nav.mobile-open .close-btn {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-      }
-      nav.mobile-open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 4rem 1.5rem;
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-      }
-      nav.mobile-open a {
-        padding: 1rem 0;
-        border-bottom: 1px solid #333;
-      }
-      .section {
-        max-width: none;
-        padding: 0 1rem;
-        margin: 1.5rem auto;
-      }
-      .top-cards {
-        flex-direction: column;
-      }
-      .goals-card {
-        display: block;
-        background: #222;
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 2rem;
-      }
-      .goals-card .title-area {
-        margin-bottom: 1rem;
-      }
-      .goals-card .title-area h2 {
-        font-size: 1.75rem;
-        color: #BDFF20;
-        margin: 0;
-      }
-      .goals-card .goal {
-        margin-bottom: 1.5rem;
-      }
-      .goals-card .goal h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 0.25rem;
-      }
-      .goals-card .goal p {
-        font-size: 1rem;
-        color: #eee;
-        margin: 0;
-        line-height: 1.4;
-      }
-      .event-card {
-        flex-direction: column;
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
-      }
-      .event-card .event-poster {
-        flex: 0 0 auto;
-        width: 100%;
-      }
-      #team .team-card,
-      #contact .contact-info {
-        max-width: 100%;
-      }
-      #home {
-        background-attachment: scroll;
-      }
-      .section-nav + .section {
-        margin-top: 10px;
-      }
+.socials li {
+  display: inline-block;  /* if you want them side-by-side */
+  margin: 0 12px;         /* spacing between icons */
+}
+
+/* in your desktop.css (or wherever you keep #contact styles) */
+.socials li a.social-pill img {
+  /* move the icon up 6px (use a positive value to push it down) */
+  transform: translateY(12px);
+
+  /* optional: also tweak size if you like */
+  height: 36px;    /* override the 30px if you want it bigger */
+  width: auto;
+}
+
+    :root {
+      --green: #BDFF20;
+      --card-bg: #1a1a1a;
     }
+
+    .form-button {
+      display: block;      /* so width is honored */
+      width: 300px;               /* set your desired width */
+      border: 1px solid var(--green);
+      border-radius: 40px;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px;
+      margin: 0 auto 32px;
+    }
+
+/* ensure the form-button animates */
+.form-button {
+  transition: background .3s, transform .2s;
+}
+
+/* hover glow & lift */
+.form-button:hover {
+  background: rgba(189,255,32,0.2);
+  transform: translateY(-2px);
+}
+
+.social-pill {
+  border-radius: 40px;                      /* your normal radius */
+  transition: background .3s,
+              transform .2s,
+              padding .2s;
+  padding: 8px 16px;    /* your default */                       /* fixed height */
+}
+
+/* hover glow & lift */
+.social-pill:hover {
+  background: rgba(189,255,32,0.2);
+  transform: translateY(-4px);
+  padding: 12px 20px;   /* larger on hover */
+}
+
+
+.card-instructions {
+  text-align: center;        /* center the line */
+  color: #ffffff;            /* neon green, or any color */
+  font-size: 1.25rem;        /* bump up the size a bit */
+  margin: 0 0 20px;          /* only bottom margin to separate from button */
+  line-height: 1.4;          /* give it some breathing room */
+}
+
 
 /* desktop.css */
 @media screen and (min-width: 768px) {
