@@ -13,6 +13,7 @@ html {
 
 /* Progress bar */
 #progress-bar-tube {
+  transition: none !important;
   position: fixed;
   top: 28px; /* adjust to your header height */
   left: 57.5%; /* ← new: anchor us at 57.5% across the viewport */
