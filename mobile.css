@@ -216,7 +216,9 @@ html {
     .mobile-card {
       background: #333;
       border-radius: 8px;
-      margin: 0 20px 12px;
+      margin: 0 16px 12px; /*Top margin: 0 
+      Right & Left margins: 20px
+      Bottom margin: 12px  */
       padding: 16px;
     }
     .mobile-card h2 {
